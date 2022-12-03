@@ -44,7 +44,7 @@ const getWorkouts = async (req, res) => {
         
         return res.status(400).json({
             status: 400,
-            workout: [],
+            workouts: [],
             message: error.message
         });
     }
