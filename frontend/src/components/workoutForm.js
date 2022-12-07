@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { useWorkoutsContext } from '../hooks/useWorkoutContext';
 
@@ -17,7 +17,7 @@ const WorkoutForm = () => {
 
         const workout = { title, load, reps };
 
-        const response = await fetch('http://localhost:5000/api/workouts', {
+        const response = await fetch(`${process.env.REACT_APP_DB_URL}/api/workouts`, {
             method: 'POST',
             body: JSON.stringify(workout),
             headers: {

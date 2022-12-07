@@ -1,3 +1,4 @@
+import React from 'react';
 import { useWorkoutsContext } from '../hooks/useWorkoutContext';
 
 const WorkoutDetails = ({ workout }) => {
@@ -10,7 +11,7 @@ const WorkoutDetails = ({ workout }) => {
 
     const handleDelete = async () => {
 
-        const response = await fetch(`http://localhost:5000/api/workouts/${workout._id}`, {
+        const response = await fetch(`${process.env.REACT_APP_DB_URL}/api/workouts/${workout._id}`, {
             method: 'DELETE',
             body: JSON.stringify(workout)
         });
